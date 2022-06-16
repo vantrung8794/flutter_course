@@ -316,8 +316,9 @@ class BuyingWidget extends StatelessWidget {
       color: Color(0xFFF5F5F5),
       padding: const EdgeInsets.symmetric(vertical: 17),
       child: Row(children: [
+        // MainAxisAlignment
         PriceBuyingWidget(),
-        SizedBox(width: 145),
+        Expanded(child: SizedBox()),
         BuyingButtonWidget(),
       ]),
     );
