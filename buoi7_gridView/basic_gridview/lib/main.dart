@@ -50,6 +50,11 @@ class ImageGridWidget extends StatelessWidget {
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(6.0),
+        // gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        //   maxCrossAxisExtent: 100,
+        //   mainAxisSpacing: 10.0,
+        //   crossAxisSpacing: 10.0,
+        // ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 6,
@@ -58,12 +63,30 @@ class ImageGridWidget extends StatelessWidget {
         ),
         itemBuilder: (_, index) {
           final item = listImages?[index];
-          return Image.network(
-            item ?? '',
-            fit: BoxFit.cover,
-          );
+          return CakeItemWidget(item: item);
         },
         itemCount: listImages?.length ?? 0,
+      ),
+    );
+  }
+}
+
+class CakeItemWidget extends StatelessWidget {
+  const CakeItemWidget({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
+
+  final String? item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.amberAccent,
+      padding: const EdgeInsets.all(16),
+      child: Image.network(
+        item ?? '',
+        fit: BoxFit.cover,
       ),
     );
   }
