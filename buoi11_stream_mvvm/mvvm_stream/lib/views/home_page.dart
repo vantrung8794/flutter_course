@@ -1,33 +1,6 @@
-import 'dart:async';
-
+import 'package:count_stream/models/person.dart';
+import 'package:count_stream/view_models/count_view_model.dart';
 import 'package:flutter/material.dart';
-
-StreamController<int> countController = StreamController.broadcast();
-Stream<int> onCount = countController.stream;
-
-int count = 0;
-
-void increaseCount() {
-  count = count + 2;
-  countController.add(count);
-}
-
-// -------------------------------------------------------
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -50,18 +23,20 @@ class MainWidget extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  var countViewModel = CountViewModel();
+
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          StreamBuilder<int>(
-              stream: onCount,
-              initialData: 0,
+          StreamBuilder<Person>(
+              stream: countViewModel.onCount,
+              initialData: countViewModel.person,
               builder: (context, snapshot) {
                 return Text(
-                  '${snapshot.data}',
+                  '${snapshot.data?.age}',
                   style: TextStyle(fontSize: 48),
                 );
               }),
@@ -70,7 +45,7 @@ class MainWidget extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              increaseCount();
+              countViewModel.increaseCount();
             },
             child: Text('Increase'),
           )
