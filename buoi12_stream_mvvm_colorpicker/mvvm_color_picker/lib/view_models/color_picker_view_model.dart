@@ -14,6 +14,9 @@ class ColorPickerViewModel {
   Stream get onChangeColor => colorStreamController.stream;
 
   void onSelectColor(String color) {
+    //
+    //
+    //
     colorStreamController.add(color);
   }
 }
