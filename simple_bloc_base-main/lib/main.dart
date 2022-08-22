@@ -7,6 +7,8 @@ import 'constants/constants.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppConfig.instance.configApp(env: Env.dev);
+  await UserInfo.initUserInfo();
+  print(UserInfo.token);
   runApp(const MyApp());
 }
 
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: RouteConfig.instance.routes,
       onGenerateInitialRoutes: (_) => [
         RouteConfig.instance.routeWithName(
-          routeName: RouteConstants.register,
+          routeName: UserInfo.isLoggedIn()
+              ? RouteConstants.home
+              : RouteConstants.login,
         ),
       ],
       builder: EasyLoading.init(),

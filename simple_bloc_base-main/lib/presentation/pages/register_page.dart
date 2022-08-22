@@ -29,6 +29,7 @@ class RegisterListener extends StatelessWidget {
         if (state.isSuccess) {
           core.UIHelper.showSnackBar(context,
               msg: "Đăng ký thành công! Chúc mừng!");
+          Navigator.of(context).pop();
         }
         if (state.isLoading) {
           core.UIHelper.showLoading();

@@ -28,6 +28,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       // bao loi.
       // emit 1 state loi.
       emit(state.copyWith(message: "Email, Name, Phone, Pass is empty!"));
+      return;
     }
     emit(state.copyWith(isLoading: true));
     // Call api.

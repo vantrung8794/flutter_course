@@ -13,4 +13,5 @@ class StyleConstants {
   static const hugeText = TextStyle(fontSize: 24);
   static const superHugeText = TextStyle(fontSize: 26);
   static const overSizeText = TextStyle(fontSize: 28);
+  static const logoText = TextStyle(fontSize: 64);
 }

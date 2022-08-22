@@ -15,6 +15,14 @@ Future<void> config(GetIt injector) async {
       () => const RegisterPage(),
       instanceName: RouteConstants.register,
     );
+    injector.registerFactory<Widget>(
+      () => const LoginPage(),
+      instanceName: RouteConstants.login,
+    );
+    injector.registerFactory<Widget>(
+      () => const HomePage(),
+      instanceName: RouteConstants.home,
+    );
   } catch (e) {
     dev.log('Config PageDependencies failed');
   }

@@ -24,4 +24,17 @@ class AuthRemote {
 
     return result;
   }
+
+  Future<Either<Failure, dynamic>> login({
+    required String email,
+    required String pass,
+  }) async {
+    final result = await _appClient
+        .call(ApiConstants.login, method: RestfulMethod.post, data: {
+      "email": email,
+      "password": pass,
+    });
+
+    return result;
+  }
 }
