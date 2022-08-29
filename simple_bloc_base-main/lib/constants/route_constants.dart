@@ -5,4 +5,7 @@ class RouteConstants {
   static const register = '/register';
   static const login = '/login';
   static const home = '/home';
+  static const tabbar = '/tabbar';
+  static const user = '/user';
+  static const editUser = '/editUser';
 }

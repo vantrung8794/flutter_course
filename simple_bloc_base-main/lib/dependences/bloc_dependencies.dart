@@ -9,6 +9,7 @@ Future<void> config(GetIt injector) async {
     injector.registerFactory<RegisterBloc>(() => RegisterBloc(injector()));
     injector.registerFactory<LoginBloc>(() => LoginBloc(injector()));
     injector.registerFactory<HomeBloc>(() => HomeBloc());
+    injector.registerFactory<EditUserBloc>(() => EditUserBloc(injector()));
   } catch (e) {
     dev.log('Config BlocDependencies failed');
   }

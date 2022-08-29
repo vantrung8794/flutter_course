@@ -13,7 +13,7 @@ abstract class AppClient {
   });
 }
 
-enum RestfulMethod { get, post, put }
+enum RestfulMethod { get, post, put, patch }
 
 class AppClientImpl extends AppClient {
   final Dio? dio;
@@ -40,6 +40,8 @@ class AppClientImpl extends AppClient {
         response = await dio?.post(path, data: data);
       } else if (method == RestfulMethod.put) {
         response = await dio?.put(path, data: data);
+      } else if (method == RestfulMethod.patch) {
+        response = await dio?.patch(path, data: data);
       }
       return _parseResponse(
         response,

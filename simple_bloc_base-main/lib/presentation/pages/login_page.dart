@@ -31,7 +31,7 @@ class LoginListener extends StatelessWidget {
         if (state.isSuccess) {
           core.UIHelper.showSnackBar(context,
               msg: "Đăng nhap thành công! Chúc mừng!");
-          Navigator.of(context).pushReplacementNamed(RouteConstants.home);
+          Navigator.of(context).pushReplacementNamed(RouteConstants.tabbar);
         }
         if (state.isLoading) {
           core.UIHelper.showLoading();

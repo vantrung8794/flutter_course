@@ -23,6 +23,18 @@ Future<void> config(GetIt injector) async {
       () => const HomePage(),
       instanceName: RouteConstants.home,
     );
+    injector.registerFactory<Widget>(
+      () => MainTabbar(),
+      instanceName: RouteConstants.tabbar,
+    );
+    injector.registerFactory<Widget>(
+      () => const UserPage(),
+      instanceName: RouteConstants.user,
+    );
+    injector.registerFactory<Widget>(
+      () => const EditUserPage(),
+      instanceName: RouteConstants.editUser,
+    );
   } catch (e) {
     dev.log('Config PageDependencies failed');
   }

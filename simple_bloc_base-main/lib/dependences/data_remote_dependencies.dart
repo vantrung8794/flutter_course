@@ -11,6 +11,9 @@ Future<void> config(GetIt injector) async {
     injector.registerLazySingleton<AuthRemote>(
       () => AuthRemote(injector()),
     );
+    injector.registerLazySingleton<UserRemote>(
+      () => UserRemote(injector()),
+    );
   } catch (e) {
     dev.log('Config ServiceDependencies failed');
   }

@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       onGenerateInitialRoutes: (_) => [
         RouteConfig.instance.routeWithName(
           routeName: UserInfo.isLoggedIn()
-              ? RouteConstants.home
+              ? RouteConstants.tabbar
               : RouteConstants.login,
         ),
       ],
