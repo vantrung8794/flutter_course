@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UIConstants {
-  UIConstants._();
+class UIConst {
+  UIConst._();
 
   static const verticalSpace2 = SizedBox(height: 2);
   static const verticalSpace4 = SizedBox(height: 4);

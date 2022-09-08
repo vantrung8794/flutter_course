@@ -1,11 +1,5 @@
-class RouteConstants {
-  RouteConstants._();
+class RouteConst {
+  RouteConst._();
 
-  static const employee = '/employee';
-  static const register = '/register';
-  static const login = '/login';
-  static const home = '/home';
-  static const tabbar = '/tabbar';
-  static const user = '/user';
-  static const editUser = '/editUser';
+  static const employees = '/employees';
 }

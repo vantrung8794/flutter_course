@@ -20,6 +20,10 @@ dependencies:
   intl: any
   shared_preferences: any
   flutter_easyloading: any
+  cached_network_image: any
+  easy_localization: any
+  file_picker: any
+  image_picker: any
 
 dev_dependencies:
   flutter_test:

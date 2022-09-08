@@ -12,3 +12,7 @@ export 'package:equatable/equatable.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:intl/intl.dart';
 export 'package:flutter_easyloading/flutter_easyloading.dart';
+export 'package:cached_network_image/cached_network_image.dart';
+export 'package:easy_localization/easy_localization.dart';
+export 'package:file_picker/file_picker.dart';
+export 'package:image_picker/image_picker.dart';

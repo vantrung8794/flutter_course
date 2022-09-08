@@ -1,0 +1,12 @@
+{
+  "ui": {
+    "hello": "hello everyone",
+    "enter_number": "Enter Number"
+  },
+  "msg": {
+    "success": "success"
+  },
+  "err": {
+    "error": "error"
+  }
+}

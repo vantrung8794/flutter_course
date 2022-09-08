@@ -2,57 +2,63 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
-class ThemeConstants {
-  ThemeConstants._();
+class ThemeConst {
+  ThemeConst._();
 
   static final inputBorder = OutlineInputBorder(
-    borderSide: const BorderSide(color: ColorConstants.grey),
-    borderRadius: BorderRadius.circular(16.0),
+    borderSide: const BorderSide(color: ColorConst.borderColor, width: 0.5),
+    borderRadius: BorderRadius.circular(8.0),
   );
 
   static ThemeData get(BuildContext context) {
     return ThemeData(
       appBarTheme: const AppBarTheme(
-        backgroundColor: ColorConstants.white,
-        foregroundColor: ColorConstants.primary,
+        backgroundColor: ColorConst.white,
+        foregroundColor: ColorConst.primaryBlue,
       ),
-      primarySwatch: ColorConstants.primaryColorSwatch,
-      primaryColor: ColorConstants.primary,
-      hintColor: ColorConstants.grey,
+      primarySwatch: ColorConst.primaryColorSwatch,
+      primaryColor: ColorConst.primaryBlue,
+      hintColor: ColorConst.textPlaceHolder,
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-        hintStyle: StyleConstants.mediumText.copyWith(
-          color: ColorConstants.grey,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        hintStyle: StyleConst.size14.copyWith(
+          color: ColorConst.textPlaceHolder,
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: ColorConstants.primary, width: 1),
-          borderRadius: BorderRadius.circular(16),
+          borderSide:
+              const BorderSide(color: ColorConst.primaryBlue, width: 0.5),
+          borderRadius: BorderRadius.circular(8),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide:
-              const BorderSide(color: ColorConstants.borderGrey, width: 0.5),
-          borderRadius: BorderRadius.circular(16),
+              const BorderSide(color: ColorConst.borderColor, width: 0.5),
+          borderRadius: BorderRadius.circular(8),
         ),
         disabledBorder: OutlineInputBorder(
           borderSide:
-              const BorderSide(color: ColorConstants.borderGrey, width: 0.5),
-          borderRadius: BorderRadius.circular(16),
+              const BorderSide(color: ColorConst.borderColor, width: 0.5),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shadowColor: Colors.transparent,
+          textStyle: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
           padding: const EdgeInsets.symmetric(
             vertical: 12,
-            horizontal: 0,
+            horizontal: 8,
           ),
-          onPrimary: ColorConstants.white,
-          primary: ColorConstants.primary,
+          onPrimary: ColorConst.white,
+          primary: ColorConst.primaryBlue,
+          onSurface: ColorConst.disableButton,
           splashFactory: InkRipple.splashFactory,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(5),
+              Radius.circular(8),
             ),
             side: BorderSide(
               color: Colors.transparent,
@@ -62,15 +68,15 @@ class ThemeConstants {
         ),
       ),
       checkboxTheme: CheckboxThemeData(
-        checkColor: MaterialStateProperty.all(ColorConstants.white),
+        checkColor: MaterialStateProperty.all(ColorConst.white),
         side: const BorderSide(
-          color: ColorConstants.primary,
+          color: ColorConst.primaryBlue,
           width: 1,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(2),
         ),
-        fillColor: MaterialStateProperty.all(ColorConstants.primary),
+        fillColor: MaterialStateProperty.all(ColorConst.primaryBlue),
       ),
     );
   }

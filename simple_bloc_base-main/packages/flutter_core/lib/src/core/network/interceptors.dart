@@ -41,7 +41,7 @@ class AppInterceptors extends Interceptor {
         'RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}');
     if (response.data is Map) {
       developer.log('data: \n${json.encode(response.data)}');
-      developer.log('statusMessage: \n${json.encode(response.statusMessage)}');
+      developer.log('statusMessage: \n${response.statusMessage}');
     }
     developer.log('---------------------------------------------------');
 
@@ -54,7 +54,7 @@ class AppInterceptors extends Interceptor {
         'ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.path}');
     if (err.response?.data is Map) {
       developer.log(json.encode(err.response?.data));
-      developer.log(json.encode(err.response?.statusMessage));
+      developer.log(err.response?.statusMessage ?? '');
     }
 
     return super.onError(err, handler);

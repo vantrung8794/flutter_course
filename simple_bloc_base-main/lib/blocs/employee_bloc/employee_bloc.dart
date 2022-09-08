@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_core/flutter_core.dart';
-import 'package:simple_bloc_base/datas/employee_remote.dart';
 
+import '../../datasources/datasources.dart';
 import '../../models/models.dart';
 
 part 'employee_event.dart';

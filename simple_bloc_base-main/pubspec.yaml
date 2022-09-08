@@ -34,7 +34,6 @@ dependencies:
   json_annotation: any
   url_launcher: any
   global_configs: any
-  cached_network_image: ^3.2.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -73,6 +72,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/cfg/
+    - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

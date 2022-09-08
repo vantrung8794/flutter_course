@@ -8,8 +8,8 @@ class EmployeeRemote {
   EmployeeRemote(this._appClient);
 
   Future<Either<Failure, List<Employee>?>> getEmployees() async {
-    final result = await _appClient.call(ApiConstants.getEmployees,
-        method: RestfulMethod.get);
+    final result =
+        await _appClient.call(ApiConst.getEmployees, method: RestfulMethod.get);
 
     return result.fold(
       (l) => Left(l),

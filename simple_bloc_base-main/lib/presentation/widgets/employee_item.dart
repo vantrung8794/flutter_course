@@ -16,20 +16,18 @@ class EmployeeItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       margin: const EdgeInsets.all(8),
-      color: Colors.black12,
+      color: ColorConst.greyBackground,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             item?.name ?? '',
-            style: StyleConstants.hugeText,
+            style: StyleConst.size26,
           ),
-          UIConstants.verticalSpace8,
+          UIConst.verticalSpace8,
           Text(
             '${item?.age} years old',
-            style: StyleConstants.mediumText.copyWith(
-              color: Colors.black38,
-            ),
+            style: StyleConst.size14,
           ),
         ],
       ),
